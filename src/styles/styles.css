@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap");
+.headingL {
+  font: 300 32px "Outfit";
+}
+
+.headingM {
+  font: 300 24px "Outfit";
+}
+
+.headingS {
+  font: 500 24px "Outfit";
+}
+
+.headingXS {
+  font: 500 18px "Outfit";
+}
+
+.bodyM {
+  font: 300 15px "Outfit";
+}
+
+.bodyS {
+  font: 300 13px "Outfit";
+}
+
+.Login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #10141E;
+}
+.Login .alertModal button {
+  height: 30%;
+}
+.Login img {
+  margin-bottom: 5%;
+}
+.Login .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161D2F;
+  width: 30vw;
+  height: 65vh;
+  padding: 2%;
+  border-radius: 20px;
+}
+.Login .form .header {
+  align-self: flex-start;
+  color: #FFFFFF;
+}
+.Login .form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+}
+.Login .form form .input {
+  width: 100%;
+  background-color: #161D2F;
+  border: none;
+  border-bottom: 1px solid #5A698F;
+  height: 40px;
+  outline: none;
+  caret-color: #FC4747;
+  color: #FFFFFF;
+}
+.Login .form form .input:focus {
+  border-color: #FFFFFF;
+}
+.Login .form form .errorMessage {
+  display: none;
+}
+.Login .form form .empty, .Login .form form .noMatch {
+  border-color: #FC4747;
+}
+.Login .form form .signupemailempty, .Login .form form .signuppasswordempty, .Login .form form .signuprepeatempty, .Login .form form .loginemailempty, .Login .form form .loginpasswordempty {
+  display: inline;
+  color: #FC4747;
+  position: absolute;
+}
+.Login .form form .signupemailempty {
+  left: 55%;
+  top: 45%;
+}
+.Login .form form .loginemailempty {
+  left: 55%;
+  top: 47%;
+}
+.Login .form form .signuppasswordempty {
+  left: 55%;
+  top: 54%;
+}
+.Login .form form .loginpasswordempty {
+  left: 55%;
+  top: 59%;
+}
+.Login .form form .signuprepeatempty {
+  left: 55%;
+  top: 63%;
+}
+.Login .form form button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+}
+.Login .form p {
+  color: white;
+}
+.Login .form a {
+  text-decoration: none;
+  color: #FC4747;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */
