@@ -5,6 +5,7 @@ import AllContent from './components/AllContent';
 import MovieList from './components/MovieList';
 import TVList from './components/TVList';
 import BookmarkList from './components/BookmarkList';
+import Search from './components/Search';
 
 const Home = () => {
     const { logout } = useLogout()
@@ -15,25 +16,31 @@ const Home = () => {
     const [ moviesActive, setMoviesActive ] = useState('')
     const [ tvActive, setTVActive ] = useState('')
     const [ bookmarksActive, setBookmarksActive ] = useState('')
+    const [ activeFilter, setActiveFilter ] = useState('all')
 
     const handleClick = (category) => {
         setAllActive('')
         setMoviesActive('')
         setTVActive('')
         setBookmarksActive('')
+        setActiveFilter('')
 
         switch(category) {
             case 'all':
                 setAllActive('active')
+                setActiveFilter('all')
                 break
             case 'movies':
                 setMoviesActive('active')
+                setActiveFilter('movies')
                 break
             case 'tv':
                 setTVActive('active')
+                setActiveFilter('tv')
                 break
             case 'bookmarks':
                 setBookmarksActive('active')
+                setActiveFilter('bookmarks')
                 break
         }
     }
@@ -56,6 +63,10 @@ const Home = () => {
                     <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="text" placeholder='Search for movies or TV series' />
                 </div>
                 {
+                    searchTerm.length > 0 ? <Search filter={activeFilter} searchTerm={searchTerm} />
+
+                    :
+
                     allActive === 'active' ? <AllContent />
 
                     :

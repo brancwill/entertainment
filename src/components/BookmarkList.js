@@ -10,8 +10,7 @@ const BookmarkList = () => {
 
     useEffect(() => {
         const userDoc = doc(db, "users", user.uid)
-        const array = []
-        const array2 = []
+        const items = []
         const getBookmarks = async () => {
             //Search for bookmarked title in user document
             const bookmarkCheck = await getDoc(userDoc)
@@ -21,10 +20,10 @@ const BookmarkList = () => {
                     const bookmark = query(collection(db, "data"), where("title", "==", bookmarkCheck.data().bookmarks[i]))
                     const querySnapshot = await getDocs(bookmark);
                     querySnapshot.forEach((doc) => {
-                        array2.push({id: doc.id, ...doc.data()});
+                        items.push({id: doc.id, ...doc.data()});
                     })
                 }
-                setBookmarks(array2)
+                setBookmarks(items)
             }
         }
         getBookmarks()

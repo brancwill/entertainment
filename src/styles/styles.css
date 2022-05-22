@@ -227,7 +227,7 @@
   height: auto;
 }
 .Home .search input {
-  width: 50%;
+  width: 90%;
   background-color: #10141E;
   border: none;
   height: 40px;
@@ -357,7 +357,7 @@
   width: 15px;
   height: 15px;
 }
-.content .Recommended, .content .movieList, .content .tvList, .content .bookmarkList {
+.content .Recommended, .content .movieList, .content .tvList, .content .bookmarkList, .content .searchResults {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-rows: auto;
@@ -365,13 +365,13 @@
   margin-right: 2%;
   padding-bottom: 15%;
 }
-.content .Recommended .Movie, .content .movieList .Movie, .content .tvList .Movie, .content .bookmarkList .Movie {
+.content .Recommended .Movie, .content .movieList .Movie, .content .tvList .Movie, .content .bookmarkList .Movie, .content .searchResults .Movie {
   inline-size: 100%;
   aspect-ratio: 14/8;
   cursor: pointer;
   transition: background-blend-mode 0.5s, background-color 0.5s;
 }
-.content .Recommended .Movie .nonTrending, .content .movieList .Movie .nonTrending, .content .tvList .Movie .nonTrending, .content .bookmarkList .Movie .nonTrending {
+.content .Recommended .Movie .nonTrending, .content .movieList .Movie .nonTrending, .content .tvList .Movie .nonTrending, .content .bookmarkList .Movie .nonTrending, .content .searchResults .Movie .nonTrending {
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -379,37 +379,38 @@
   padding: 3%;
   margin-bottom: 2%;
   height: 100%;
+  transition: background-blend-mode 0.5s, background-color 0.5s;
 }
-.content .Recommended .Movie .nonTrending:hover, .content .movieList .Movie .nonTrending:hover, .content .tvList .Movie .nonTrending:hover, .content .bookmarkList .Movie .nonTrending:hover {
+.content .Recommended .Movie .nonTrending:hover, .content .movieList .Movie .nonTrending:hover, .content .tvList .Movie .nonTrending:hover, .content .bookmarkList .Movie .nonTrending:hover, .content .searchResults .Movie .nonTrending:hover {
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: overlay;
 }
-.content .Recommended .Movie .nonTrending:hover .playButton, .content .movieList .Movie .nonTrending:hover .playButton, .content .tvList .Movie .nonTrending:hover .playButton, .content .bookmarkList .Movie .nonTrending:hover .playButton {
+.content .Recommended .Movie .nonTrending:hover .playButton, .content .movieList .Movie .nonTrending:hover .playButton, .content .tvList .Movie .nonTrending:hover .playButton, .content .bookmarkList .Movie .nonTrending:hover .playButton, .content .searchResults .Movie .nonTrending:hover .playButton {
   display: flex;
 }
-.content .Recommended .Movie .nonTrending .playButton, .content .movieList .Movie .nonTrending .playButton, .content .tvList .Movie .nonTrending .playButton, .content .bookmarkList .Movie .nonTrending .playButton {
+.content .Recommended .Movie .nonTrending .playButton, .content .movieList .Movie .nonTrending .playButton, .content .tvList .Movie .nonTrending .playButton, .content .bookmarkList .Movie .nonTrending .playButton, .content .searchResults .Movie .nonTrending .playButton {
   width: 90%;
 }
-.content .Recommended .Movie .nonTrending .bookmarkCircle, .content .movieList .Movie .nonTrending .bookmarkCircle, .content .tvList .Movie .nonTrending .bookmarkCircle, .content .bookmarkList .Movie .nonTrending .bookmarkCircle {
+.content .Recommended .Movie .nonTrending .bookmarkCircle, .content .movieList .Movie .nonTrending .bookmarkCircle, .content .tvList .Movie .nonTrending .bookmarkCircle, .content .bookmarkList .Movie .nonTrending .bookmarkCircle, .content .searchResults .Movie .nonTrending .bookmarkCircle {
   width: 25px;
   height: 25px;
 }
-.content .Recommended .Movie .nonTrending .bookmarkCircle .bookmark, .content .movieList .Movie .nonTrending .bookmarkCircle .bookmark, .content .tvList .Movie .nonTrending .bookmarkCircle .bookmark, .content .bookmarkList .Movie .nonTrending .bookmarkCircle .bookmark {
+.content .Recommended .Movie .nonTrending .bookmarkCircle .bookmark, .content .movieList .Movie .nonTrending .bookmarkCircle .bookmark, .content .tvList .Movie .nonTrending .bookmarkCircle .bookmark, .content .bookmarkList .Movie .nonTrending .bookmarkCircle .bookmark, .content .searchResults .Movie .nonTrending .bookmarkCircle .bookmark {
   width: 15px;
 }
-.content .Recommended .Movie .nonTrendingInfo, .content .movieList .Movie .nonTrendingInfo, .content .tvList .Movie .nonTrendingInfo, .content .bookmarkList .Movie .nonTrendingInfo {
+.content .Recommended .Movie .nonTrendingInfo, .content .movieList .Movie .nonTrendingInfo, .content .tvList .Movie .nonTrendingInfo, .content .bookmarkList .Movie .nonTrendingInfo, .content .searchResults .Movie .nonTrendingInfo {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row: 3;
   align-self: end;
 }
-.content .Recommended .Movie .nonTrendingInfo .info, .content .movieList .Movie .nonTrendingInfo .info, .content .tvList .Movie .nonTrendingInfo .info, .content .bookmarkList .Movie .nonTrendingInfo .info {
+.content .Recommended .Movie .nonTrendingInfo .info, .content .movieList .Movie .nonTrendingInfo .info, .content .tvList .Movie .nonTrendingInfo .info, .content .bookmarkList .Movie .nonTrendingInfo .info, .content .searchResults .Movie .nonTrendingInfo .info {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 2%;
 }
-.content .Recommended .Movie .nonTrendingInfo .info .categoryImage, .content .movieList .Movie .nonTrendingInfo .info .categoryImage, .content .tvList .Movie .nonTrendingInfo .info .categoryImage, .content .bookmarkList .Movie .nonTrendingInfo .info .categoryImage {
+.content .Recommended .Movie .nonTrendingInfo .info .categoryImage, .content .movieList .Movie .nonTrendingInfo .info .categoryImage, .content .tvList .Movie .nonTrendingInfo .info .categoryImage, .content .bookmarkList .Movie .nonTrendingInfo .info .categoryImage, .content .searchResults .Movie .nonTrendingInfo .info .categoryImage {
   width: 15px;
   height: 15px;
 }
