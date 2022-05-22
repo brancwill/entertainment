@@ -1,22 +1,47 @@
 import React, {useState} from 'react';
-import { useLogout } from './hooks/useLogout';
-import { useAuthContext } from "./hooks/useAuthContext";
 import AllContent from './components/AllContent';
 import MovieList from './components/MovieList';
 import TVList from './components/TVList';
 import BookmarkList from './components/BookmarkList';
 import Search from './components/Search';
+import Modal from 'react-modal/lib/components/Modal';
+import AccountInfo from './components/AccountInfo';
+
+Modal.setAppElement(document.querySelector("#content"))
 
 const Home = () => {
-    const { logout } = useLogout()
     const [ searchTerm, setSearchTerm ] = useState("")
-    const { user } = useAuthContext()
+    const [ open, setOpen ] = useState(false)
 
     const [ allActive, setAllActive ] = useState('active')
     const [ moviesActive, setMoviesActive ] = useState('')
     const [ tvActive, setTVActive ] = useState('')
     const [ bookmarksActive, setBookmarksActive ] = useState('')
     const [ activeFilter, setActiveFilter ] = useState('all')
+
+    const closeModal = () => {
+        setOpen(false)
+    }
+
+    const modalStyles = {
+        overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.5)"
+        },
+        content: {
+            width: "50vw",
+            height: "50vh",
+            backgroundColor: "#161D2F",
+            color: "#FFFFFF",
+            borderRadius: "10px",
+            textAlign: "center",
+            margin: "10% auto 0",
+            padding: "5%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            gap: "20%"
+        }
+    }
 
     const handleClick = (category) => {
         setAllActive('')
@@ -55,9 +80,12 @@ const Home = () => {
                     <img onClick={() => handleClick('tv')} className={"navIcon " + tvActive} src="assets/icon-nav-tv-series.svg"/>
                     <img onClick={() => handleClick('bookmarks')} className={"navIcon " + bookmarksActive} src="assets/icon-nav-bookmark.svg"/>
                 </div>
-                    <img className="accountIcon" src="assets/icon-account.svg" />
+                    <img onClick={() => setOpen(true)} className="accountIcon" src="assets/icon-account.svg" />
             </div>
-            <div className="content">
+            <div id="content" className="content">
+                <Modal isOpen={open} onRequestClose={closeModal} style={modalStyles} shouldCloseOnOverlayClick={true} >
+                    <AccountInfo closeModal={closeModal}/>
+                </Modal>
                 <div className="search">
                     <img className='searchIcon' src="assets/icon-search.svg" />
                     <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="text" placeholder='Search for movies or TV series' />

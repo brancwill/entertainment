@@ -167,10 +167,18 @@
 .Home {
   background-color: #10141E;
   height: 100%;
+  min-height: 100vh;
   width: 100%;
   display: flex;
-  padding: 2% 0 2% 1%;
+  padding: 2% 0 2% 2%;
   box-sizing: border-box;
+}
+@media screen and (max-width: 900px) {
+  .Home {
+    flex-direction: column;
+    width: 100vw;
+    padding-bottom: 10%;
+  }
 }
 .Home .Navbar {
   background-color: #161D2F;
@@ -185,9 +193,26 @@
   border-radius: 15px;
   margin-right: 2%;
 }
+@media screen and (max-width: 900px) {
+  .Home .Navbar {
+    flex-direction: row;
+    height: 7vh;
+    width: 100%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Home .Navbar {
+    height: 12vh;
+  }
+}
 .Home .Navbar .logo {
   width: 30px;
   height: auto;
+}
+@media screen and (max-width: 900px) and (min-height: 900px) {
+  .Home .Navbar .logo {
+    width: 50px;
+  }
 }
 .Home .Navbar .navIcons {
   height: 40%;
@@ -196,6 +221,30 @@
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .Home .Navbar .navIcons {
+    flex-direction: row;
+    gap: 20%;
+    margin-left: 25%;
+  }
+}
+@media screen and (max-width: 900px) and (min-height: 900px) {
+  .Home .Navbar .navIcons {
+    gap: 10%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Home .Navbar .navIcons {
+    gap: 30%;
+    margin-left: 35%;
+  }
+}
+@media screen and (max-width: 900px) and (min-height: 900px) {
+  .Home .Navbar .navIcons .navIcon {
+    width: 45px;
+    height: auto;
+  }
 }
 .Home .Navbar .active {
   filter: brightness(0) invert(1);
@@ -211,6 +260,27 @@
 }
 .Home .Navbar .accountIcon:hover {
   filter: invert(1);
+}
+@media screen and (max-width: 900px) {
+  .Home .Navbar .accountIcon {
+    margin-top: 0;
+    margin-left: 25%;
+  }
+}
+@media screen and (max-width: 900px) and (min-height: 900px) {
+  .Home .Navbar .accountIcon {
+    width: 60px;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Home .Navbar .accountIcon {
+    margin-left: 35%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 700px) and (max-height: 450px) {
+  .Home .Navbar .accountIcon {
+    margin-left: 30%;
+  }
 }
 .Home .content {
   display: flex;
@@ -308,6 +378,11 @@
   height: auto;
   padding-bottom: 15px;
 }
+@media screen and (max-width: 900px) {
+  .content .Trending {
+    grid-auto-columns: 58%;
+  }
+}
 .content .Trending::-webkit-scrollbar {
   scrollbar-gutter: 10px;
   background-color: transparent;
@@ -364,6 +439,11 @@
   gap: 3%;
   margin-right: 2%;
   padding-bottom: 15%;
+}
+@media screen and (max-width: 900px) {
+  .content .Recommended, .content .movieList, .content .tvList, .content .bookmarkList, .content .searchResults {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 .content .Recommended .Movie, .content .movieList .Movie, .content .tvList .Movie, .content .bookmarkList .Movie, .content .searchResults .Movie {
   inline-size: 100%;
