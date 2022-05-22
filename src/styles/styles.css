@@ -32,11 +32,32 @@
   align-items: center;
   background-color: #10141E;
 }
+@media screen and (max-width: 900px) and (min-height: 800px) {
+  .Login {
+    justify-content: flex-start;
+    padding-top: 15%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Login {
+    padding-top: 3%;
+  }
+}
 .Login .alertModal button {
   height: 30%;
 }
 .Login img {
   margin-bottom: 5%;
+}
+@media screen and (max-width: 480px) {
+  .Login img {
+    margin-bottom: 12%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Login img {
+    margin-bottom: 2%;
+  }
 }
 .Login .form {
   display: flex;
@@ -49,6 +70,38 @@
   padding: 2%;
   border-radius: 20px;
 }
+@media screen and (max-width: 900px) {
+  .Login .form {
+    width: 40vw;
+    padding: 5%;
+  }
+}
+@media screen and (max-width: 900px) and (min-height: 800px) {
+  .Login .form {
+    width: 60vw;
+    height: 40vh;
+    padding: 5%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .Login .form {
+    width: 55vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Login .form {
+    width: 85vw;
+    height: 55vh;
+    padding: 10% 5%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Login .form {
+    width: 50vw;
+    height: 80vh;
+    padding: 2% 5%;
+  }
+}
 .Login .form .header {
   align-self: flex-start;
   color: #FFFFFF;
@@ -60,6 +113,9 @@
   align-items: center;
   width: 100%;
   height: 70%;
+}
+.Login .form form input:-webkit-autofill, .Login .form form input:-webkit-autofill:hover, .Login .form form input:-webkit-autofill:focus {
+  background-color: #161D2F;
 }
 .Login .form form .input {
   width: 100%;
@@ -74,41 +130,31 @@
 .Login .form form .input:focus {
   border-color: #FFFFFF;
 }
-.Login .form form .errorMessage {
-  display: none;
-}
-.Login .form form .empty, .Login .form form .noMatch {
+.Login .form form .empty {
   border-color: #FC4747;
 }
-.Login .form form .signupemailempty, .Login .form form .signuppasswordempty, .Login .form form .signuprepeatempty, .Login .form form .loginemailempty, .Login .form form .loginpasswordempty {
-  display: inline;
+.Login .form form .spanempty::after {
+  content: "Can't be empty";
   color: #FC4747;
-  position: absolute;
-}
-.Login .form form .signupemailempty {
-  left: 55%;
-  top: 45%;
-}
-.Login .form form .loginemailempty {
-  left: 55%;
-  top: 47%;
-}
-.Login .form form .signuppasswordempty {
-  left: 55%;
-  top: 54%;
-}
-.Login .form form .loginpasswordempty {
-  left: 55%;
-  top: 59%;
-}
-.Login .form form .signuprepeatempty {
-  left: 55%;
-  top: 63%;
+  font: 300 13px "Outfit";
+  position: relative;
+  z-index: 2;
+  top: -5.5vh;
+  left: 9vw;
 }
 .Login .form form button {
   width: 100%;
   height: 40px;
   border-radius: 5px;
+  background-color: #FC4747;
+  color: #FFFFFF;
+  border: none;
+  margin-top: 2%;
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Login .form form button {
+    margin-top: 5%;
+  }
 }
 .Login .form p {
   color: white;
@@ -116,6 +162,256 @@
 .Login .form a {
   text-decoration: none;
   color: #FC4747;
+}
+
+.Home {
+  background-color: #10141E;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 2% 0 2% 1%;
+  box-sizing: border-box;
+}
+.Home .Navbar {
+  background-color: #161D2F;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5%;
+  padding: 2%;
+  height: 92vh;
+  width: 5vw;
+  border-radius: 15px;
+  margin-right: 2%;
+}
+.Home .Navbar .logo {
+  width: 30px;
+  height: auto;
+}
+.Home .Navbar .navIcons {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+.Home .Navbar .active {
+  filter: brightness(0) invert(1);
+}
+.Home .Navbar .accountIcon {
+  filter: invert(43%) sepia(14%) saturate(1111%) hue-rotate(185deg) brightness(88%) contrast(85%);
+  width: 40px;
+  height: auto;
+  justify-self: flex-end;
+  margin-top: 30vh;
+  transition: filter 0.4s;
+  cursor: pointer;
+}
+.Home .Navbar .accountIcon:hover {
+  filter: invert(1);
+}
+.Home .content {
+  display: flex;
+  flex-direction: column;
+}
+.Home .search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.Home .search .searchIcon {
+  width: 25px;
+  height: auto;
+}
+.Home .search input {
+  width: 50%;
+  background-color: #10141E;
+  border: none;
+  height: 40px;
+  outline: none;
+  caret-color: #FC4747;
+  color: #FFFFFF;
+}
+.Home .search input:focus {
+  border-bottom: 1px solid #5A698F;
+}
+.Home .sectionHeader {
+  color: #FFFFFF;
+}
+
+.content {
+  color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+}
+.content .sectionTitle {
+  letter-spacing: 1px;
+  margin: 3vh 0;
+}
+.content .title {
+  border-radius: 5px;
+}
+.content .snapsInline {
+  scroll-snap-type: inline mandatory;
+}
+.content .snapsInline > * {
+  scroll-snap-align: start;
+}
+.content .playButton {
+  display: none;
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10%;
+  padding: 5%;
+  width: 70%;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.content .bookmarkCircle {
+  grid-column: 3;
+  grid-row: 1;
+  padding: 7%;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+.content .bookmarkCircle:hover {
+  background-color: white;
+}
+.content .bookmarkCircle:hover .bookmark {
+  filter: invert(0);
+}
+.content .bookmarkCircle .bookmark {
+  filter: invert(1);
+  width: 20px;
+  height: auto;
+  transition: filter 0.3s;
+}
+.content .Trending {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 36%;
+  column-gap: 3%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  height: auto;
+  padding-bottom: 15px;
+}
+.content .Trending::-webkit-scrollbar {
+  scrollbar-gutter: 10px;
+  background-color: transparent;
+}
+.content .Trending::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+.content .Trending:hover::-webkit-scrollbar-thumb {
+  background-color: #161D2F;
+}
+.content .Trending .trendingTitle {
+  inline-size: 100%;
+  aspect-ratio: 16/8;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 1.5vw;
+  cursor: pointer;
+  transition: background-blend-mode 0.5s, background-color 0.5s;
+}
+.content .Trending .trendingTitle:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: overlay;
+}
+.content .Trending .trendingTitle:hover .playButton {
+  display: flex;
+}
+.content .Trending .trendingTitle .bookmarkCircle {
+  width: 30px;
+  height: 30px;
+}
+.content .Trending .titleInfo {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 3;
+  align-self: end;
+}
+.content .Trending .titleInfo .info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2%;
+}
+.content .Trending .titleInfo .info .categoryImage {
+  width: 15px;
+  height: 15px;
+}
+.content .Recommended, .content .movieList, .content .tvList, .content .bookmarkList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 3%;
+  margin-right: 2%;
+  padding-bottom: 15%;
+}
+.content .Recommended .Movie, .content .movieList .Movie, .content .tvList .Movie, .content .bookmarkList .Movie {
+  inline-size: 100%;
+  aspect-ratio: 14/8;
+  cursor: pointer;
+  transition: background-blend-mode 0.5s, background-color 0.5s;
+}
+.content .Recommended .Movie .nonTrending, .content .movieList .Movie .nonTrending, .content .tvList .Movie .nonTrending, .content .bookmarkList .Movie .nonTrending {
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 3%;
+  margin-bottom: 2%;
+  height: 100%;
+}
+.content .Recommended .Movie .nonTrending:hover, .content .movieList .Movie .nonTrending:hover, .content .tvList .Movie .nonTrending:hover, .content .bookmarkList .Movie .nonTrending:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: overlay;
+}
+.content .Recommended .Movie .nonTrending:hover .playButton, .content .movieList .Movie .nonTrending:hover .playButton, .content .tvList .Movie .nonTrending:hover .playButton, .content .bookmarkList .Movie .nonTrending:hover .playButton {
+  display: flex;
+}
+.content .Recommended .Movie .nonTrending .playButton, .content .movieList .Movie .nonTrending .playButton, .content .tvList .Movie .nonTrending .playButton, .content .bookmarkList .Movie .nonTrending .playButton {
+  width: 90%;
+}
+.content .Recommended .Movie .nonTrending .bookmarkCircle, .content .movieList .Movie .nonTrending .bookmarkCircle, .content .tvList .Movie .nonTrending .bookmarkCircle, .content .bookmarkList .Movie .nonTrending .bookmarkCircle {
+  width: 25px;
+  height: 25px;
+}
+.content .Recommended .Movie .nonTrending .bookmarkCircle .bookmark, .content .movieList .Movie .nonTrending .bookmarkCircle .bookmark, .content .tvList .Movie .nonTrending .bookmarkCircle .bookmark, .content .bookmarkList .Movie .nonTrending .bookmarkCircle .bookmark {
+  width: 15px;
+}
+.content .Recommended .Movie .nonTrendingInfo, .content .movieList .Movie .nonTrendingInfo, .content .tvList .Movie .nonTrendingInfo, .content .bookmarkList .Movie .nonTrendingInfo {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 3;
+  align-self: end;
+}
+.content .Recommended .Movie .nonTrendingInfo .info, .content .movieList .Movie .nonTrendingInfo .info, .content .tvList .Movie .nonTrendingInfo .info, .content .bookmarkList .Movie .nonTrendingInfo .info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2%;
+}
+.content .Recommended .Movie .nonTrendingInfo .info .categoryImage, .content .movieList .Movie .nonTrendingInfo .info .categoryImage, .content .tvList .Movie .nonTrendingInfo .info .categoryImage, .content .bookmarkList .Movie .nonTrendingInfo .info .categoryImage {
+  width: 15px;
+  height: 15px;
 }
 
 * {

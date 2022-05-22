@@ -8,6 +8,13 @@
     justify-content: center;
     align-items: center;
     background-color: colors.$black;
+    @media screen and (max-width: 900px) and (min-height: 800px) {
+        justify-content: flex-start;
+        padding-top: 15%;
+    }
+    @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+        padding-top: 3%;
+    }
     .alertModal {
         button {
             height: 30%;
@@ -15,6 +22,12 @@
     }
     img {
         margin-bottom: 5%;
+        @media screen and (max-width: 480px) {
+            margin-bottom: 12%;
+        }
+        @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+            margin-bottom: 2%;
+        }
     }
     .form {
         display: flex;
@@ -26,6 +39,28 @@
         height: 65vh;
         padding: 2%;
         border-radius: 20px;
+        @media screen and (max-width: 900px) {
+            width: 40vw;
+            padding: 5%;
+        }
+        @media screen and (max-width: 900px) and (min-height: 800px) {
+            width: 60vw;
+            height: 40vh;
+            padding: 5%;
+        }
+        @media screen and (max-width: 680px) {
+            width: 55vw;
+        }
+        @media screen and (max-width: 480px) {
+            width: 85vw;
+            height: 55vh;
+            padding: 10% 5%;
+        }
+        @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+            width: 50vw;
+            height: 80vh;
+            padding: 2% 5%;
+        }
         .header {
             align-self: flex-start;
             color: colors.$white;
@@ -37,6 +72,11 @@
             align-items: center;
             width: 100%;
             height: 70%;
+            input {
+                &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus {
+                    background-color: colors.$darkBlue;
+                }
+            }
             .input {
                 width: 100%;
                 background-color: colors.$darkBlue;
@@ -50,41 +90,31 @@
                     border-color: colors.$white;
                 }
             }
-            .errorMessage {
-                display: none;
-            }
-            .empty, .noMatch {
+            .empty {
                 border-color: colors.$red;
             }
-            .signupemailempty, .signuppasswordempty, .signuprepeatempty, .loginemailempty, .loginpasswordempty {
-                display: inline;
-                color: colors.$red;
-                position: absolute;
-            }
-            .signupemailempty {
-                left: 55%;
-                top: 45%;
-            }
-            .loginemailempty {
-                left: 55%;
-                top: 47%;
-            }
-            .signuppasswordempty {
-                left: 55%;
-                top: 54%
-            }
-            .loginpasswordempty {
-                left: 55%;
-                top: 59%
-            }
-            .signuprepeatempty {
-                left: 55%;
-                top: 63%;
+            .spanempty {
+                &::after {
+                    content: "Can't be empty";
+                    color: colors.$red;
+                    font: 300 13px "Outfit";
+                    position: relative;
+                    z-index: 2;
+                    top: -5.5vh;
+                    left: 9vw;
+                }
             }
             button {
                 width: 100%;
                 height: 40px;
                 border-radius: 5px;
+                background-color: colors.$red;
+                color: colors.$white;
+                border: none;
+                margin-top: 2%;
+                @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+                    margin-top: 5%;
+                }
             }
         }
         p {

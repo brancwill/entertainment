@@ -1,0 +1,79 @@
+@use 'colors';
+
+.Home {
+    background-color: colors.$black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 2% 0 2% 1%;
+    box-sizing: border-box;
+    .Navbar {
+        background-color: colors.$darkBlue;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5%;
+        padding: 2%;
+        height: 92vh;
+        width: 5vw;
+        border-radius: 15px;
+        margin-right: 2%;
+        .logo {
+            width: 30px;
+            height: auto;
+        }
+        .navIcons {
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            cursor: pointer;
+        }
+        .active {
+            filter: brightness(0) invert(1);
+        }
+        .accountIcon {
+            filter: invert(43%) sepia(14%) saturate(1111%) hue-rotate(185deg) brightness(88%) contrast(85%);
+            width: 40px;
+            height: auto;
+            justify-self: flex-end;
+            margin-top: 30vh;
+            transition: filter 0.4s;
+            cursor: pointer;
+            &:hover {
+                filter: invert(1);
+            }
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+    .search {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        .searchIcon {
+            width: 25px;
+            height: auto;
+        }
+        input {
+            width: 50%;
+            background-color: colors.$black;
+            border: none;
+            height: 40px;
+            outline: none;
+            caret-color: colors.$red;
+            color: colors.$white;
+            &:focus {
+                border-bottom: 1px solid colors.$gray;
+            }
+        }
+    }
+    .sectionHeader {
+        color: colors.$white;
+    }
+}

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { register } from './authFunctions';
+import { useSignup } from './hooks/useSignup';
 import Modal from 'react-modal/lib/components/Modal';
+
+Modal.setAppElement(document.querySelector("#Login"))
 
 const Signup = () => {
 
@@ -11,10 +13,19 @@ const Signup = () => {
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
     const [ repeat, setRepeat ] = useState("")
+    const [ openErrorNoMatch, setOpenErrorNoMatch ] = useState(false)
+    const [ openSuccess, setOpenSuccess ] = useState(false)
     const [ openError, setOpenError ] = useState(false)
+    const { error, signup } = useSignup()
 
+    const closeErrorNoMatchModal = () => {
+        setOpenErrorNoMatch(false)
+    }
     const closeErrorModal = () => {
         setOpenError(false)
+    }
+    const closeSuccessModal = () => {
+        setOpenSuccess(false)
     }
 
     const modalStyles = {
@@ -47,27 +58,38 @@ const Signup = () => {
         } else if (repeat === "") {
             setRepeatError("empty")
         } else if (password !== repeat) {
-            setOpenError(true)
+            setOpenErrorNoMatch(true)
         } else {
-                register(email, password)
+            signup(email, password)
+            if (error !== null) {
+                setOpenError(true)
+            }
         }
     }
     return (
-        <div className="Login">
-            <Modal className="alertModal" isOpen={openError} onRequestClose={closeErrorModal} style={modalStyles} shouldCloseOnOverlayClick={true}> 
+        <div id="Login" className="Login">
+            <Modal className="alertModal" isOpen={openErrorNoMatch} onRequestClose={closeErrorNoMatchModal} style={modalStyles} shouldCloseOnOverlayClick={true}> 
                 <p className='bodyM'>Passwords do not match.</p>
+                <button className="bodyM" onClick={closeErrorNoMatchModal}>Close</button>
+            </Modal>
+            <Modal className="alertModal" isOpen={openError} onRequestClose={closeErrorModal} style={modalStyles} shouldCloseOnOverlayClick={true}> 
+                <p className='bodyM'>{error}</p>
                 <button className="bodyM" onClick={closeErrorModal}>Close</button>
+            </Modal>
+            <Modal className="alertModal" isOpen={openSuccess} onRequestClose={closeSuccessModal} style={modalStyles} shouldCloseOnOverlayClick={true}> 
+                <p className='bodyM'>Account Successfully Created! <Link to="../">Home</Link></p>
+                <button className="bodyM" onClick={closeSuccessModal}>Close</button>
             </Modal>
             <img src="assets/logo.svg" alt="logo"/>
             <div className="form">
                 <h1 className="headingL header">Sign Up</h1>
                 <form onSubmit={handleSubmit}>
                     <input value={email} onChange={e => { setEmail(e.target.value); setEmailError("") }} className={"bodyS input " + emailError} type="email" name="email" placeholder='Email Address' />
-                    <p className={"errorMessage bodyS signupemail" + emailError}>Can't be empty</p>
+                    <span className={"span" + emailError}></span>
                     <input value={password} onChange={e => { setPassword(e.target.value); setPasswordError("") }} className={"bodyS input " + passwordError} type="password" name="password" placeholder='Password' />
-                    <p className={"errorMessage bodyS signuppassword" + passwordError}>Can't be empty</p>
+                    <span className={"span" + passwordError}></span>
                     <input value={repeat} onChange={e => { setRepeat(e.target.value); setRepeatError("") }} className={"bodyS input " + repeatError} type="password" name="password" placeholder='Repeat Password' />
-                    <p className={"errorMessage bodyS signuprepeat" + repeatError}>Can't be empty</p>
+                    <span className={"span" + repeatError}></span>
                     <button className="bodyM" type="submit">Create an account</button>
                 </form>
                 <p className="bodyS">Already have an account? <Link to="../login">Login</Link></p>
