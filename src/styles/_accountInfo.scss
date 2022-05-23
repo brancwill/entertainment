@@ -1,5 +1,71 @@
+@use "colors";
+
 .AccountInfo {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    img {
+        width: 20%;
+        height: auto;
+        filter: invert(1);
+    }
+    .buttonGroup {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10%;
+        button {
+            width: 20vw;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 2%;
+        }
+        .logout {
+            background-color: colors.$gray;
+        }
+        .delete {
+            background-color: colors.$red;
+        }
+    }
+    .hidden {
+        display: none;
+    }
+    .unhidden {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hiddenButtons {
+        display: flex; 
+        flex-direction: row;
+        gap: 5%;
+        margin-top: 2%;
+        button {
+            border: none;
+            border-radius: 5px;
+            color: white;
+            width: 15vw;
+            height: 30px;
+        }
+        .affirm {
+            background-color: colors.$red;
+        }
+        .deny {
+            background-color: colors.$gray;
+        }
+    }
+    .close {
+        color: colors.$red;
+        border: none;
+        border-radius: 5px;
+        background-color: colors.$white;
+        margin-top: 3%;
+        height: 30px;
+        width: 15vw;
+    }
 }

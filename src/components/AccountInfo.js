@@ -8,7 +8,7 @@ const AccountInfo = (props) => {
 
     const { user } = useAuthContext()
     const { logout } = useLogout()
-    const [ classname, setClassname ] = useState("hidden")
+    const [ hide, setHide ] = useState("hidden")
 
     const handleClick = () => {
         deleteUser(auth.currentUser)
@@ -16,16 +16,20 @@ const AccountInfo = (props) => {
 
     return (
         <div className="AccountInfo">
-            <img src="assets/icon-account" alt="" />
+            <img src="assets/icon-account.svg" alt="" />
             <h1 className="headingS">Logged in as: {user.email}</h1>
-            <button onClick={logout}>Logout</button>
-            <button onClick={() => setClassname('unhidden')}>Delete Account</button>
-            <div className={classname}>
-                <h1 className="headingXS">Are you sure you want to delete your account?</h1>
-                <button className="affirm" onClick={handleClick}>Yes</button>
-                <button className="deny" onClick={() => setClassname('hidden')}>No</button>
+            <div className='buttonGroup'>
+                <button className="bodyM logout" onClick={logout}>Logout</button>
+                <button className="bodyM delete" onClick={() => setHide('unhidden')}>Delete Account</button>
             </div>
-            <button onClick={props.closeModal}>Close</button>
+            <div className={hide}>
+                <h1 className="headingXS">Are you sure you want to delete your account?</h1>
+                <div className="hiddenButtons">
+                    <button className="bodyM affirm" onClick={handleClick}>Yes</button>
+                    <button className="bodyM deny" onClick={() => setHide('hidden')}>No</button>
+                </div>
+            </div>
+            <button className="close" onClick={props.closeModal}>Close</button>
         </div>
     );
 };
