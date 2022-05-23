@@ -10,9 +10,24 @@
 .headingS {
   font: 500 24px "Outfit";
 }
+@media screen and (max-width: 550px) {
+  .headingS {
+    font-size: 16px;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .headingS {
+    font-size: 16px;
+  }
+}
 
 .headingXS {
   font: 500 18px "Outfit";
+}
+@media screen and (max-width: 550px) {
+  .headingXS {
+    font-size: 12px;
+  }
 }
 
 .bodyM {
@@ -21,6 +36,11 @@
 
 .bodyS {
   font: 300 13px "Outfit";
+}
+@media screen and (max-width: 550px) {
+  .bodyS {
+    font-size: 10px;
+  }
 }
 
 .Login {
@@ -177,7 +197,12 @@
   .Home {
     flex-direction: column;
     width: 100vw;
-    padding-bottom: 10%;
+    padding-bottom: 30%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Home {
+    padding-bottom: 40%;
   }
 }
 .Home .Navbar {
@@ -508,67 +533,122 @@
   height: auto;
   filter: invert(1);
 }
-.AccountInfo .buttonGroup {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10%;
+@media screen and (max-width: 550px) {
+  .AccountInfo img {
+    width: 30%;
+  }
 }
-.AccountInfo .buttonGroup button {
-  width: 20vw;
-  height: 30px;
+.AccountInfo button {
+  width: 40vw;
+  height: 60px;
   border: none;
   border-radius: 5px;
   color: white;
   margin-bottom: 2%;
+  cursor: pointer;
 }
-.AccountInfo .buttonGroup .logout {
+@media screen and (max-width: 550px) {
+  .AccountInfo button {
+    width: 40vw;
+  }
+}
+@media screen and (max-width: 900px) and (min-height: 950px) {
+  .AccountInfo button {
+    width: 50vw;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 900px) and (max-height: 450px) {
+  .AccountInfo button {
+    height: 40px;
+    margin-top: 3%;
+  }
+}
+.AccountInfo .logout {
   background-color: #5A698F;
+  transition: background-color 0.5s;
 }
-.AccountInfo .buttonGroup .delete {
+.AccountInfo .logout:hover {
+  background-color: #8c9ecb;
+}
+.AccountInfo .close {
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
   background-color: #FC4747;
+  margin-top: 3%;
+  height: 60px;
+  width: 40vw;
+  cursor: pointer;
+  transition: background-color 0.5s;
 }
-.AccountInfo .hidden {
-  display: none;
+@media screen and (max-width: 900px) and (min-height: 950px) {
+  .AccountInfo .close {
+    width: 50vw;
+  }
 }
-.AccountInfo .unhidden {
+@media screen and (max-width: 900px) and (max-height: 450px) {
+  .AccountInfo .close {
+    height: 40px;
+  }
+}
+.AccountInfo .close:hover {
+  background-color: #ffb8b8;
+}
+
+.Sorry {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #161D2F;
+  color: #FFFFFF;
 }
-.AccountInfo .hiddenButtons {
-  display: flex;
-  flex-direction: row;
-  gap: 5%;
-  margin-top: 2%;
+.Sorry .back {
+  align-self: flex-start;
+  border: 1px solid #FFFFFF;
+  padding: 1%;
+  transition: color 0.5s, border-color 0.5s;
 }
-.AccountInfo .hiddenButtons button {
-  border: none;
-  border-radius: 5px;
-  color: white;
-  width: 15vw;
-  height: 30px;
-}
-.AccountInfo .hiddenButtons .affirm {
-  background-color: #FC4747;
-}
-.AccountInfo .hiddenButtons .deny {
-  background-color: #5A698F;
-}
-.AccountInfo .close {
+.Sorry .back:hover {
   color: #FC4747;
-  border: none;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-  margin-top: 3%;
-  height: 30px;
-  width: 15vw;
+  border-color: #FC4747;
+}
+.Sorry h1 {
+  text-align: center;
+}
+@media screen and (max-width: 900px) {
+  .Sorry h1 {
+    margin-top: 10%;
+  }
+}
+@media screen and (max-width: 900px) and (max-height: 450px) {
+  .Sorry h1 {
+    margin-top: 2%;
+  }
+}
+.Sorry img {
+  width: 300px;
+  height: auto;
+  filter: invert(1);
+}
+@media screen and (max-width: 900px) and (max-height: 450px) {
+  .Sorry img {
+    width: 200px;
+  }
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /*# sourceMappingURL=styles.css.map */

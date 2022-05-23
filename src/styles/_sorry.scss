@@ -1,0 +1,39 @@
+@use 'colors';
+
+.Sorry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    width: 100vw;
+    height: 100vh;
+    background-color: colors.$darkBlue;
+    color: colors.$white;
+    .back {
+        align-self: flex-start;
+        border: 1px solid colors.$white;
+        padding: 1%;
+        transition: color 0.5s, border-color 0.5s;
+        &:hover {
+            color: colors.$red;
+            border-color: colors.$red;
+        }
+    }
+    h1 {
+        text-align: center;
+        @media screen and (max-width: 900px) {
+            margin-top: 10%;
+        }
+        @media screen and (max-width: 900px) and (max-height: 450px) {
+            margin-top: 2%;
+        }
+    }
+    img {
+        width: 300px;
+        height: auto;
+        filter: invert(1);
+        @media screen and (max-width: 900px) and (max-height: 450px) {
+            width: 200px;
+        }
+    }
+}

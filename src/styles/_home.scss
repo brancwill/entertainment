@@ -11,10 +11,10 @@
     @media screen and (max-width: 900px) {
         flex-direction: column;
         width: 100vw;
-        padding-bottom: 10%;
+        padding-bottom: 30%;
     }
-    @media screen and (max-width: 900px) and (min-height: 900px) {
-            
+    @media screen and (max-width: 500px) {
+        padding-bottom: 40%;
     }
     .Navbar {
         background-color: colors.$darkBlue;

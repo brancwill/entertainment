@@ -11,61 +11,55 @@
         width: 20%;
         height: auto;
         filter: invert(1);
+        @media screen and (max-width: 550px) {
+            width: 30%;
+        }
     }
-    .buttonGroup {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 10%;
         button {
-            width: 20vw;
-            height: 30px;
+            width: 40vw;
+            height: 60px;
             border: none;
             border-radius: 5px;
             color: white;
             margin-bottom: 2%;
+            cursor: pointer;
+            @media screen and (max-width: 550px) {
+                width: 40vw;
+            }
+            @media screen and (max-width: 900px) and (min-height: 950px) {
+                width: 50vw;
+                height: 60px;
+            }
+            @media screen and (max-width: 900px) and (max-height: 450px) {
+                height: 40px;
+                margin-top: 3%;
+            }
         }
         .logout {
             background-color: colors.$gray;
+            transition: background-color 0.5s;
+            &:hover {
+                background-color: colors.$lightGray;
+            }
         }
-        .delete {
-            background-color: colors.$red;
-        }
-    }
-    .hidden {
-        display: none;
-    }
-    .unhidden {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .hiddenButtons {
-        display: flex; 
-        flex-direction: row;
-        gap: 5%;
-        margin-top: 2%;
-        button {
-            border: none;
-            border-radius: 5px;
-            color: white;
-            width: 15vw;
-            height: 30px;
-        }
-        .affirm {
-            background-color: colors.$red;
-        }
-        .deny {
-            background-color: colors.$gray;
-        }
-    }
     .close {
-        color: colors.$red;
+        color: colors.$white;
         border: none;
         border-radius: 5px;
-        background-color: colors.$white;
+        background-color: colors.$red;
         margin-top: 3%;
-        height: 30px;
-        width: 15vw;
+        height: 60px;
+        width: 40vw;
+        cursor: pointer;
+        @media screen and (max-width: 900px) and (min-height: 950px) {
+            width: 50vw;
+        }
+        @media screen and (max-width: 900px) and (max-height: 450px) {
+            height: 40px;
+        }
+        transition: background-color 0.5s;
+            &:hover {
+                background-color: colors.$lightRed;
+            }
     }
 }

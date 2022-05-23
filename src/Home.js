@@ -28,8 +28,8 @@ const Home = () => {
             backgroundColor: "rgba(0, 0, 0, 0.5)"
         },
         content: {
-            width: "50vw",
-            height: "70vh",
+            width: "80vw",
+            height: "80vh",
             backgroundColor: "#161D2F",
             color: "#FFFFFF",
             borderRadius: "10px",
@@ -82,7 +82,7 @@ const Home = () => {
                     <img onClick={() => setOpen(true)} className="accountIcon" src="assets/icon-account.svg" />
             </div>
             <div id="content" className="content">
-                <Modal isOpen={open} onRequestClose={closeModal} style={modalStyles} shouldCloseOnOverlayClick={true} >
+                <Modal className="accountModal" isOpen={open} onRequestClose={closeModal} style={modalStyles} shouldCloseOnOverlayClick={true} >
                     <AccountInfo closeModal={closeModal}/>
                 </Modal>
                 <div className="search">

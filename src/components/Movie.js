@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { db } from '../firebaseConfig';
 import { doc, getDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
 import { useAuthContext } from '../hooks/useAuthContext';
+import { Link } from 'react-router-dom';
 
 const Movie = (props) => {
     const { user } = useAuthContext()
@@ -53,6 +54,7 @@ const Movie = (props) => {
     }
     const categorySource = mediaTypeHandler(props.type)
     return (
+        <Link to='/sorry'>
         <div className="Movie">
             <div className='nonTrending title' style={{backgroundImage: `url(${props.image})`}}>
                 {bookmarked ?
@@ -81,6 +83,7 @@ const Movie = (props) => {
                 <h1 className="title headingXS">{props.title}</h1>
             </div>
         </div>
+        </Link>
     );
 };
 
