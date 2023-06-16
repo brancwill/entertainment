@@ -139,6 +139,7 @@
 }
 .Login .form form .input {
   width: 100%;
+  padding-left: 5px;
   background-color: #161D2F;
   border: none;
   border-bottom: 1px solid #5A698F;
@@ -334,6 +335,173 @@
   border-bottom: 1px solid #5A698F;
 }
 .Home .sectionHeader {
+  color: #FFFFFF;
+}
+
+.Guest {
+  background-color: #10141E;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  padding: 2% 0 2% 2%;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 900px) {
+  .Guest {
+    flex-direction: column;
+    width: 100vw;
+    padding-bottom: 30%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Guest {
+    padding-bottom: 40%;
+  }
+}
+.Guest .Navbar {
+  background-color: #161D2F;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5%;
+  padding: 2%;
+  height: 92vh;
+  width: 5vw;
+  border-radius: 15px;
+  margin-right: 2%;
+}
+@media screen and (max-width: 900px) {
+  .Guest .Navbar {
+    flex-direction: row;
+    height: 7vh;
+    width: 100%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Guest .Navbar {
+    height: 12vh;
+  }
+}
+.Guest .Navbar .logo {
+  width: 30px;
+  height: auto;
+}
+@media screen and (max-width: 900px) and (min-height: 900px) {
+  .Guest .Navbar .logo {
+    width: 50px;
+  }
+}
+.Guest .Navbar .navIcons {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .Guest .Navbar .navIcons {
+    flex-direction: row;
+    gap: 20%;
+  }
+}
+@media screen and (max-width: 900px) and (min-height: 900px) {
+  .Guest .Navbar .navIcons {
+    gap: 10%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Guest .Navbar .navIcons {
+    gap: 30%;
+  }
+}
+@media screen and (max-width: 900px) and (min-height: 900px) {
+  .Guest .Navbar .navIcons .navIcon {
+    width: 45px;
+    height: auto;
+  }
+}
+.Guest .Navbar .Reg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.Guest .Navbar .Reg h6 {
+  color: white;
+  transition: 0.3s;
+  font-size: 16px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.Guest .Navbar .Reg h6:hover {
+  color: #FC4747;
+}
+.Guest .Navbar .active {
+  filter: brightness(0) invert(1);
+}
+.Guest .Navbar .accountIcon {
+  filter: invert(43%) sepia(14%) saturate(1111%) hue-rotate(185deg) brightness(88%) contrast(85%);
+  width: 40px;
+  height: auto;
+  justify-self: flex-end;
+  margin-top: 30vh;
+  transition: filter 0.4s;
+  cursor: pointer;
+}
+.Guest .Navbar .accountIcon:hover {
+  filter: invert(1);
+}
+@media screen and (max-width: 900px) {
+  .Guest .Navbar .accountIcon {
+    margin-top: 0;
+    margin-left: 25%;
+  }
+}
+@media screen and (max-width: 900px) and (min-height: 900px) {
+  .Guest .Navbar .accountIcon {
+    width: 60px;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
+  .Guest .Navbar .accountIcon {
+    margin-left: 35%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 700px) and (max-height: 450px) {
+  .Guest .Navbar .accountIcon {
+    margin-left: 30%;
+  }
+}
+.Guest .content {
+  display: flex;
+  flex-direction: column;
+}
+.Guest .search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.Guest .search .searchIcon {
+  width: 25px;
+  height: auto;
+}
+.Guest .search input {
+  width: 90%;
+  background-color: #10141E;
+  border: none;
+  height: 40px;
+  outline: none;
+  caret-color: #FC4747;
+  color: #FFFFFF;
+}
+.Guest .search input:focus {
+  border-bottom: 1px solid #5A698F;
+}
+.Guest .sectionHeader {
   color: #FFFFFF;
 }
 
